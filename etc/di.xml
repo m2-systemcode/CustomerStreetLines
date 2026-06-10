@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="SystemCode\CustomerStreetLines\Api\ConfigInterface"
+                type="SystemCode\CustomerStreetLines\Model\Config"/>
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+        <plugin name="systemcode_customerstreetlines_layout_processor"
+                type="SystemCode\CustomerStreetLines\Plugin\Checkout\LayoutProcessor"
+                sortOrder="100"/>
+    </type>
+    <type name="Magento\Customer\Block\Address\Edit">
+        <plugin name="systemcode_customerstreetlines_address_edit"
+                type="SystemCode\CustomerStreetLines\Plugin\Block\Address\EditPlugin"
+                sortOrder="10"/>
+    </type>
+</config>

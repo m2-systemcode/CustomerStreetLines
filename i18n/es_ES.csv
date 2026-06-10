@@ -1,0 +1,27 @@
+"Street Lines","Líneas de Dirección"
+"General","General"
+"Enable","Activar"
+"When disabled, Magento keeps its default street address labels
+and validation behavior.","Cuando está desactivado, Magento mantiene las etiquetas y la validación predeterminadas de las líneas de dirección."
+"Enable to apply custom street line labels and required settings
+on the storefront.","Active para aplicar etiquetas personalizadas y configuraciones de obligatoriedad en la tienda."
+"Street Line Labels","Etiquetas de Líneas de Dirección"
+"Define the label for each street address line.
+Configure the number of street lines under Stores > Configuration > Customers >
+Customer Configuration > Name and Address Options.","Defina la etiqueta de cada línea de dirección. Configure la cantidad de líneas en Tiendas > Configuración > Clientes > Configuración de Cliente > Opciones de Nombre y Dirección."
+"Line 1 Label","Etiqueta de la Línea 1"
+"Line 2 Label","Etiqueta de la Línea 2"
+"Line 3 Label","Etiqueta de la Línea 3"
+"Line 4 Label","Etiqueta de la Línea 4"
+"Leave empty to keep the default Magento label.","Deje vacío para mantener la etiqueta predeterminada de Magento."
+"Require Line 2","Requerir Línea 2"
+"Require Line 3","Requerir Línea 3"
+"Require Line 4","Requerir Línea 4"
+"Required Street Lines","Líneas de Dirección Obligatorias"
+"Line 1 is always required by Magento.
+Use these settings to mark additional street lines as required.
+Each option is ignored when the store is configured to show fewer street address lines
+than the line number.","La línea 1 siempre es obligatoria en Magento. Use estas opciones para marcar líneas adicionales como obligatorias. Cada opción se ignora cuando la tienda está configurada para mostrar menos líneas de dirección que el número de la línea."
+"Ignored when the store is configured to show fewer than 2 street address lines.","Se ignora cuando la tienda está configurada para mostrar menos de 2 líneas de dirección."
+"Ignored when the store is configured to show fewer than 3 street address lines.","Se ignora cuando la tienda está configurada para mostrar menos de 3 líneas de dirección."
+"Ignored when the store is configured to show fewer than 4 street address lines.","Se ignora cuando la tienda está configurada para mostrar menos de 4 líneas de dirección."

@@ -1,0 +1,34 @@
+"Street Lines","Street Lines"
+"General","General"
+"Enable","Enable"
+"When disabled, Magento keeps its default street address labels
+and validation behavior.","When disabled, Magento keeps its default street address labels
+and validation behavior."
+"Enable to apply custom street line labels and required settings
+on the storefront.","Enable to apply custom street line labels and required settings
+on the storefront."
+"Street Line Labels","Street Line Labels"
+"Define the label for each street address line.
+Configure the number of street lines under Stores > Configuration > Customers >
+Customer Configuration > Name and Address Options.","Define the label for each street address line.
+Configure the number of street lines under Stores > Configuration > Customers >
+Customer Configuration > Name and Address Options."
+"Line 1 Label","Line 1 Label"
+"Line 2 Label","Line 2 Label"
+"Line 3 Label","Line 3 Label"
+"Line 4 Label","Line 4 Label"
+"Leave empty to keep the default Magento label.","Leave empty to keep the default Magento label."
+"Require Line 2","Require Line 2"
+"Require Line 3","Require Line 3"
+"Require Line 4","Require Line 4"
+"Required Street Lines","Required Street Lines"
+"Line 1 is always required by Magento.
+Use these settings to mark additional street lines as required.
+Each option is ignored when the store is configured to show fewer street address lines
+than the line number.","Line 1 is always required by Magento.
+Use these settings to mark additional street lines as required.
+Each option is ignored when the store is configured to show fewer street address lines
+than the line number."
+"Ignored when the store is configured to show fewer than 2 street address lines.","Ignored when the store is configured to show fewer than 2 street address lines."
+"Ignored when the store is configured to show fewer than 3 street address lines.","Ignored when the store is configured to show fewer than 3 street address lines."
+"Ignored when the store is configured to show fewer than 4 street address lines.","Ignored when the store is configured to show fewer than 4 street address lines."

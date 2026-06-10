@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="customerstreetlines" translate="label" sortOrder="40"
+                 showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Street Lines</label>
+            <tab>systemcode</tab>
+            <resource>SystemCode_CustomerStreetLines::config</resource>
+            <group id="general" translate="label comment" sortOrder="5"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <comment><![CDATA[When disabled, Magento keeps its default street address labels
+and validation behavior.]]></comment>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable to apply custom street line labels and required settings
+on the storefront.</comment>
+                </field>
+            </group>
+            <group id="labels" translate="label comment" sortOrder="10"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Street Line Labels</label>
+                <comment><![CDATA[Define the label for each street address line.
+Configure the number of street lines under Stores > Configuration > Customers >
+Customer Configuration > Name and Address Options.]]></comment>
+                <depends>
+                    <field id="general/enabled">1</field>
+                </depends>
+                <field id="line_1" translate="label" type="text" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Line 1 Label</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="line_2" translate="label" type="text" sortOrder="20"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Line 2 Label</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="line_3" translate="label" type="text" sortOrder="30"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Line 3 Label</label>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="line_4" translate="label" type="text" sortOrder="40"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Line 4 Label</label>
+                    <validate>required-entry</validate>
+                </field>
+            </group>
+            <group id="required" translate="label comment" sortOrder="20"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Required Street Lines</label>
+                <comment><![CDATA[Line 1 is always required by Magento.
+Use these settings to mark additional street lines as required.
+Each option is ignored when the store is configured to show fewer street address lines
+than the line number.]]></comment>
+                <depends>
+                    <field id="general/enabled">1</field>
+                </depends>
+                <field id="line_2_required" translate="label comment" type="select" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Require Line 2</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Ignored when the store is configured to show fewer than 2 street address lines.</comment>
+                </field>
+                <field id="line_3_required" translate="label comment" type="select" sortOrder="20"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Require Line 3</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Ignored when the store is configured to show fewer than 3 street address lines.</comment>
+                </field>
+                <field id="line_4_required" translate="label comment" type="select" sortOrder="30"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Require Line 4</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Ignored when the store is configured to show fewer than 4 street address lines.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

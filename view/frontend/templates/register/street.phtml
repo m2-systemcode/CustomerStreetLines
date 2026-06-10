@@ -1,0 +1,66 @@
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Magento\Framework\Escaper $escaper */
+/** @var \SystemCode\CustomerStreetLines\ViewModel\StreetLines $streetLinesViewModel */
+
+$registerBlock = $block->getParentBlock();
+if (!$registerBlock instanceof \Magento\Customer\Block\Form\Register) {
+    return;
+}
+
+$streetLinesViewModel = $block->getData('street_lines_view_model');
+$formData = $registerBlock->getFormData();
+$_streetValidationClass = $streetLinesViewModel->getStreetValidationClass();
+?>
+<div class="field street required">
+    <label for="street_1" class="label">
+        <span><?= $escaper->escapeHtml($streetLinesViewModel->getRegisterFirstLineLabel(
+            (string) $registerBlock->getAttributeData()->getFrontendLabel('street')
+        )) ?></span>
+    </label>
+    <div class="control">
+        <input type="text"
+               name="street[0]"
+               value="<?= $escaper->escapeHtmlAttr($formData->getStreet(0)) ?>"
+               title="<?= /* @noEscape */ $registerBlock->getAttributeData()->getFrontendLabel('street') ?>"
+               id="street_1"
+               class="input-text <?= $escaper->escapeHtmlAttr($_streetValidationClass) ?>">
+        <div class="nested">
+            <?php
+                $_streetValidationClass = $_streetValidationClass !== null
+                    ? trim(str_replace('required-entry', '', $_streetValidationClass)) : '';
+                $streetLines = $streetLinesViewModel->getStreetLineCount();
+            ?>
+            <?php for ($_i = 2, $_n = $streetLines; $_i <= $_n; $_i++): ?>
+                <?php
+                    $_lineIndex = $_i - 1;
+                    $_additionalFieldClass = $escaper->escapeHtmlAttr(
+                        $streetLinesViewModel->getRequiredFieldClass($_lineIndex)
+                    );
+                    $_additionalLineLabel = $escaper->escapeHtml(
+                        $streetLinesViewModel->getRegisterAdditionalLineLabel($_lineIndex)
+                    );
+                    $_additionalInputClass = $escaper->escapeHtmlAttr(
+                        $_streetValidationClass . $streetLinesViewModel->getRequiredInputClass($_lineIndex)
+                    );
+                ?>
+                <div class="field additional<?= /* @noEscape */ $_additionalFieldClass ?>">
+                    <label class="label" for="street_<?= /* @noEscape */ $_i ?>">
+                        <span><?= /* @noEscape */ $_additionalLineLabel ?></span>
+                    </label>
+                    <div class="control">
+                        <input type="text"
+                               name="street[<?= /* @noEscape */ $_lineIndex ?>]"
+                               value="<?= $escaper->escapeHtml($formData->getStreetLine($_lineIndex)) ?>"
+                               title="<?= $escaper->escapeHtmlAttr(__('Street Address %1', $_i)) ?>"
+                               id="street_<?= /* @noEscape */ $_i ?>"
+                               <?php if ($streetLinesViewModel->isLineRequired($_lineIndex)): ?>
+                               aria-required="true"
+                               <?php endif; ?>
+                               class="input-text <?= /* @noEscape */ $_additionalInputClass ?>">
+                    </div>
+                </div>
+            <?php endfor; ?>
+        </div>
+    </div>
+</div>
